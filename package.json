@@ -1,0 +1,20 @@
+{
+  "name": "10dlc-assistant",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"yarn dev:api\" \"yarn dev:web\"",
+    "dev:api": "yarn workspace @10dlc/api dev",
+    "dev:web": "yarn workspace @10dlc/web dev",
+    "db:migrate": "yarn workspace @10dlc/api db:migrate"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "packageManager": "yarn@4.10.3",
+  "engines": {
+    "node": ">=20"
+  }
+}

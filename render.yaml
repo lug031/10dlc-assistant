@@ -1,0 +1,38 @@
+# Render Blueprint para el API de 10dlc-assistant (Hono).
+#
+# Este servicio usa el PLAN FREE de Render (sin disco persistente): los datos
+# NO viven en Render, sino en Turso (libSQL), una base SQLite gestionada en la
+# nube y gratuita. Por eso el disco efímero de Render no afecta la información.
+#
+# Nota: en el plan Free el servicio "duerme" tras ~15 min de inactividad; la
+# primera petición tras dormir tarda ~30s (cold start). Es normal.
+#
+# El frontend se despliega por separado en Vercel (ver DEPLOY.md).
+
+services:
+  - type: web
+    name: 10dlc-api
+    runtime: node
+    region: oregon
+    plan: free
+    branch: main
+    buildCommand: corepack enable && yarn install --immutable && yarn workspace @10dlc/api build
+    startCommand: yarn workspace @10dlc/api start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      # Base de datos Turso (libSQL). Configúralas en el dashboard de Render:
+      #   DATABASE_URL         -> libsql://<tu-db>-<org>.turso.io
+      #   DATABASE_AUTH_TOKEN  -> token generado con `turso db tokens create`
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_AUTH_TOKEN
+        sync: false
+      # URL del frontend en Vercel, p. ej. https://tu-app.vercel.app
+      # (varias separadas por coma si aplica).
+      - key: CORS_ORIGIN
+        sync: false
