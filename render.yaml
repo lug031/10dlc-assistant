@@ -16,11 +16,15 @@ services:
     region: oregon
     plan: free
     branch: main
-    buildCommand: corepack enable && yarn install --immutable && yarn workspace @10dlc/api build
+    # Node 20 + Yarn 4 vía Corepack (el packageManager del package.json).
+    # Sin esto, Render a veces usa Yarn 1 y falla con --immutable / workspaces.
+    buildCommand: corepack enable && corepack prepare yarn@4.10.3 --activate && YARN_ENABLE_IMMUTABLE_INSTALLS=true yarn install --immutable && yarn workspace @10dlc/api build
     startCommand: yarn workspace @10dlc/api start
     healthCheckPath: /api/health
     autoDeploy: true
     envVars:
+      - key: NODE_VERSION
+        value: "20"
       - key: NODE_ENV
         value: production
       - key: HOST

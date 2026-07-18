@@ -13,14 +13,14 @@
     "@hono/node-server": "^1.19.6",
     "@hono/zod-validator": "^0.7.5",
     "@libsql/client": "^0.17.4",
+    "@types/node": "^22.19.1",
     "dotenv": "^17.2.3",
     "drizzle-orm": "^0.44.2",
     "hono": "^4.10.7",
+    "typescript": "^5.9.3",
     "zod": "^3.25.76"
   },
   "devDependencies": {
-    "@types/node": "^22.19.1",
-    "tsx": "^4.20.6",
-    "typescript": "^5.9.3"
+    "tsx": "^4.20.6"
   }
 }
