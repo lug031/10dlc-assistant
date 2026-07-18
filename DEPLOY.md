@@ -76,9 +76,13 @@ El `.gitignore` ya excluye `node_modules`, `dist`, `.env` y `*.db`.
 2. Configuración:
    - **Root Directory**: `apps/web`
    - Framework: **Vite** (autodetectado; también en `apps/web/vercel.json`)
-3. **Environment Variables**:
+   - **Node.js Version**: `20.x` (Settings → General, o vía `.nvmrc`)
+3. **Environment Variables** (entorno **Production**):
    - `VITE_API_URL` = `https://10dlc-api.onrender.com` (tu URL del API, **sin** `/api`)
 4. Deploy → obtendrás `https://tu-app.vercel.app`.
+
+> El `vercel.json` instala desde la raíz del monorepo con Yarn 4
+> (`corepack yarn`), porque Vercel por defecto usa Yarn 1 y falla.
 
 ---
 
