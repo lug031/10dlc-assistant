@@ -5,6 +5,7 @@ build
 .env.local
 *.db
 *.db-journal
+*.tsbuildinfo
 apps/api/data/
 .DS_Store
 *.log
