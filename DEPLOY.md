@@ -60,6 +60,12 @@ El `.gitignore` ya excluye `node_modules`, `dist`, `.env` y `*.db`.
 3. Deploy. Obtendrás una URL tipo `https://10dlc-api.onrender.com`.
    Prueba `https://10dlc-api.onrender.com/api/health` → `{"status":"ok"}`.
 
+> Si el build falla con `EROFS` / `corepack enable`, en el servicio → **Settings** →
+> **Build Command** usa exactamente:
+> `corepack yarn install --immutable && corepack yarn workspace @10dlc/api build`
+> y **Start Command**: `corepack yarn workspace @10dlc/api start`
+> (no uses `corepack enable` en Render).
+
 > Free duerme tras ~15 min sin uso; la primera petición luego tarda ~30s.
 
 ---
