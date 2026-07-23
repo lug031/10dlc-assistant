@@ -14,19 +14,9 @@ export const LEADWIRE_CAMPAIGN_TEMPLATES: Record<
   LeadwireCampaignTemplateKey,
   string | null
 > = {
-  LW_CAMPAIGN_DESCRIPTION_SAMPLE_1: `<Brand Name>, a brand managed by <Legal Entity Name> will use this campaigns to retarget their previous in-store customers who've signed up to receive their promotions and accepted their terms and privacy policy (established in CTA). Their goal is to send marketing promotions (up to 5 messages monthly to target increased sales and customer communications).`,
+  LW_CAMPAIGN_DESCRIPTION_SAMPLE_1: `<Brand Name>, a brand managed by <Legal Entity Name> will use this campaign to retarget their previous in-store customers who've signed up to receive their promotions and accepted their privacy policy (established in CTA). Their goal is to send marketing promotions (up to 5 messages monthly to target increased sales and customer communications).`,
 
-  LW_CTA_SAMPLE_FLOW_3: `Customers will opt-in by filling out a subscription form by scanning a QR code at [BRAND NAME] location that redirects visitors to [LEAD MAGNET URL]
-
-By filling out the form they accept their Privacy Policy and the following disclaimer:
-
-"By subscribing, you agree to receive promotional text messages from us at the phone number provided. Consent is not a condition of purchase. Message frequency is up to 5 messages per month. Message and data rates may apply. You can opt out at any time by replying STOP. For help, reply HELP."
-
-Also members opt-in by typing an opt-in keyword "[KEYWORD]", on both cases an automatic system confirmation will be sent with instructions to opt-out
-
-"You've registered to [BRAND NAME] text notifications. Messages & data rates may apply, Reply STOP to opt-out at any time. Reply HELP to view available commands. You will receive up to 5 messages per month."
-
-[BRAND NAME] will then send text notifications about their events, up to 5 times a month.`,
+  LW_CTA_SAMPLE_FLOW_3: `Customers will opt-in by filling out a subscription form by scanning a QR code at [BRAND NAME] location that redirects visitors to [LEAD MAGNET URL] By filling out the form they accept their Privacy Policy and the following disclaimer: "By subscribing, you agree to receive promotional text messages from us at the phone number provided. Consent is not a condition of purchase. Message frequency is up to 5 messages per month. Message and data rates may apply. You can opt out at any time by replying STOP. For help, reply HELP." The privacy policy contains the following statement: "[Brand Name] does not share, sell, or rent your mobile number or SMS consent information with third parties for marketing purposes." Also members opt-in by typing an opt-in keyword "[KEYWORD]", on both cases an automatic system confirmation will be sent with instructions to opt-out "You've registered to [BRAND NAME] text notifications. Messages & data rates may apply, Reply STOP to opt-out at any time. Reply HELP to view available commands. You will receive up to 5 messages per month." [BRAND NAME] will then send text notifications about their events, up to 5 times a month.`,
 
   LW_CTA_SAMPLE_FLOW_4: `Customers will opt-in by filling out a subscription form by scanning a QR code at [BRAND NAME] location that redirects visitors to [LEAD MAGNET URL]
 
